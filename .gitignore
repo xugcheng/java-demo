@@ -1,0 +1,14 @@
+.idea
+anta-task-server/anta-task-server.iml
+target/
+*.log
+*.iml
+logs
+*~
+*.zip
+catalina.home_IS_UNDEFINED
+.DS_Store
+http_load
+weibu-task-server/log.path_IS_UNDEFINED/
+*.pyc
+.osscredentials
