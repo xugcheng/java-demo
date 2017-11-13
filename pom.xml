@@ -18,6 +18,7 @@
         <module>rx-java-2x</module>
         <module>dubbo-demo</module>
         <module>spring-batch-demo</module>
+        <module>zipkin-demo</module>
     </modules>
 
     <properties>
