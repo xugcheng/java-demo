@@ -1,0 +1,45 @@
+<included>
+
+    <property name="log.path" value="/mnt/dubbo/logs"/>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are  by default assigned the type
+       ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <target>System.out</target>
+        <encoder>
+            <pattern>%date{ISO8601} [%thread] %-5level %logger{36} - %msg%n %caller{1}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="dubbo" class="ch.qos.logback.core.rolling.RollingFileAppender">   
+        <file>${log.path}/dubbo/dubbo-provider.log</file>
+
+        <!--过滤规则-->
+        <!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+        <!--<level>ERROR</level>-->
+        <!--<onMatch>DENY</onMatch>-->
+        <!--<onMisMatch>NEUTRAL</onMisMatch>-->
+        <!--</filter>-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/dubbo/%d{yyyy-MM,aux}/dubbo-provider-%d.log.zip</fileNamePattern>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%date{ISO8601} [%thread] %-5level %logger{26} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="dubbo"/>
+        <appender-ref ref="stdout"/>
+    </root>
+
+</included>
