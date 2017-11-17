@@ -7,15 +7,15 @@ import org.redisson.config.Config;
 import java.util.Iterator;
 import java.util.Random;
 
+
 public class RedissionTest {
+
+    public static Random random = new Random();
 
     public static void main(String[] agrs) throws Exception {
 
-        Random random = new Random();
-
         Config config = new Config();
         config.useSingleServer().setAddress("redis://127.0.0.1:6379");
-
 
         RedissonClient client = Redisson.create(config);
 
@@ -61,9 +61,8 @@ public class RedissionTest {
         RGeo<String> geo = client.getGeo("geo");
         geo.add(113.95402818918228149, 22.55048517933375507, "pos3");
         geo.add(113.95032674074172974, 22.54391011264642231, "pos4");
-        RFuture<Double> distance = geo.distAsync("pos3", "pos4", GeoUnit.METERS);
-        distance.await();
-        System.out.println("distance:" + distance.get());
+        Double distance = geo.dist("pos3", "pos4", GeoUnit.METERS);
+        System.out.println("distance:" + distance);
         System.out.println(geo.hash("pos1", "pos2", "pos3", "pos4"));
 
         //atomicLong
