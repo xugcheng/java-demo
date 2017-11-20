@@ -18,6 +18,20 @@ public class RegexTest {
         System.out.println(str.matches("(\\w)*"));
         System.out.println(str.matches("(\\d)*"));
 
+        String reg = "^ICW(01|02|03)-\\d{6,7}$";
+        System.out.println("ICW01-000111".matches(reg));
+        System.out.println("ICW01-0001111".matches(reg));
+
+        System.out.println("ICW02-000111".matches(reg));
+        System.out.println("ICW02-0001111".matches(reg));
+
+        System.out.println("ICW02-00011".matches(reg));
+        System.out.println("ICW02-00011111".matches(reg));
+        System.out.println("ICW02-00011b".matches(reg));
+
+        System.out.println("ICW03-000111".matches(reg));
+        System.out.println("ICW03-0001111".matches(reg));
+
     }
 
 }
