@@ -1,3 +1,5 @@
+package com.xugc.demo.serialize;
+
 import com.google.gson.Gson;
 
 import java.io.Serializable;
@@ -16,7 +18,7 @@ public class GsonTest {
 
         A a = new A();
         a.setId(1);
-        a.setName("A");
+        a.setName("com.xugc.demo.serialize.A");
 
         Response<A> resA = new Response<A>();
         resA.setCode(1);
@@ -82,103 +84,4 @@ public class GsonTest {
     }
 
 
-}
-
-class Response<T> implements Serializable {
-
-    private Integer code;
-
-    private String msg;
-
-    private T data;
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-}
-
-class A {
-    private Integer id;
-
-    private String name;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
-
-class B {
-    private Integer id;
-
-    private String address;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-}
-
-class ParameterizedTypeImpl implements ParameterizedType {
-    private final Class raw;
-    private final Type[] args;
-
-    public ParameterizedTypeImpl(Class raw, Type[] args) {
-        this.raw = raw;
-        this.args = args != null ? args : new Type[0];
-    }
-
-    public Type[] getActualTypeArguments() {
-        return args;
-    }
-
-    public Type getRawType() {
-        return raw;
-    }
-
-    public Type getOwnerType() {
-        return null;
-    }
 }

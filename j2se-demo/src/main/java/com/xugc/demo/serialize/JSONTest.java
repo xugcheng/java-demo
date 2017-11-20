@@ -1,4 +1,9 @@
+package com.xugc.demo.serialize;
+
 import com.alibaba.fastjson.JSON;
+import com.xugc.demo.serialize.A;
+import com.xugc.demo.serialize.ParameterizedTypeImpl;
+import com.xugc.demo.serialize.Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -13,7 +18,7 @@ public class JSONTest {
 
         A a = new A();
         a.setId(1);
-        a.setName("A");
+        a.setName("com.xugc.demo.serialize.A");
 
         Response<A> resA = new Response<A>();
         resA.setCode(1);
