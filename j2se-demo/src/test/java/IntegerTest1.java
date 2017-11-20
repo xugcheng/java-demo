@@ -1,7 +1,7 @@
 /**
  * Created by xuguocheng on 2016/12/19.
  */
-public class Test {
+public class IntegerTest1 {
     public static void main(String[] args) {
 
         Integer a1, a2;

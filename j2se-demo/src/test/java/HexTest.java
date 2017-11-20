@@ -4,7 +4,7 @@ import io.netty.buffer.Unpooled;
 /**
  * Created by xuguocheng on 2017/6/26.
  */
-public class Test1 {
+public class HexTest {
 
     public static void main(String[] args) {
 
