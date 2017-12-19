@@ -19,11 +19,12 @@
         <module>dubbo-demo</module>
         <module>spring-batch-demo</module>
         <module>zipkin-demo</module>
+        <module>aviator-demo</module>
     </modules>
 
     <properties>
         <spring.version>4.3.9.RELEASE</spring.version>
-        <jdk.version>1.9</jdk.version>
+        <jdk.version>1.8</jdk.version>
     </properties>
 
     <dependencyManagement>
