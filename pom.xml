@@ -20,6 +20,7 @@
         <module>spring-batch-demo</module>
         <module>zipkin-demo</module>
         <module>aviator-demo</module>
+        <module>spring-session-demo</module>
     </modules>
 
     <properties>
