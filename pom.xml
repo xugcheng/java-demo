@@ -21,6 +21,7 @@
         <module>zipkin-demo</module>
         <module>aviator-demo</module>
         <module>spring-session-demo</module>
+        <module>spring-websocket-demo</module>
     </modules>
 
     <properties>
