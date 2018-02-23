@@ -17,9 +17,12 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 
-        registry.addHandler(myTextWebSocketHandler, "ws/message")
+        registry.addHandler(myTextWebSocketHandler, "/ws")
                 .addInterceptors(myHandshakeIntercepter)
                 .setAllowedOrigins("*");
-//                .withSockJS();
+        registry.addHandler(myTextWebSocketHandler, "/sockjs")
+                .addInterceptors(myHandshakeIntercepter)
+                .setAllowedOrigins("*")
+                .withSockJS();
     }
 }
