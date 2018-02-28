@@ -48,7 +48,7 @@ public class BaseAuthClient {
      * @author 徐国诚
      * @since JDK 1.6
      */
-    public static String getAccessTokenResponse(String appId, String appSecret) throws Exception {
+    public static String getAccessTokenResponse(String appId, String appSecret) {
         String url = ACCESS_TOKEN_URL + "?grant_type=client_credential&appid=" + appId + "&secret=" + appSecret;
         return HttpUtil.get(url);
     }
@@ -63,7 +63,7 @@ public class BaseAuthClient {
      * @author 徐国诚
      * @since JDK 1.6
      */
-    public static JSONObject getAccessTokenJSON(String appId, String appSecret) throws Exception {
+    public static JSONObject getAccessTokenJSON(String appId, String appSecret) {
         JSONObject result = null;
         String response = getAccessTokenResponse(appId, appSecret);
         if (!StringUtil.isNullOrEmpty(response)) {
@@ -82,7 +82,7 @@ public class BaseAuthClient {
      * @author 徐国诚
      * @since JDK 1.6
      */
-    public static String getAccessToken(String appId, String appSecret) throws Exception {
+    public static String getAccessToken(String appId, String appSecret) {
         String access_token = null;
         JSONObject response = getAccessTokenJSON(appId, appSecret);
         if (response != null && response.containsKey("access_token")) {
@@ -100,7 +100,7 @@ public class BaseAuthClient {
      * @author 徐国诚
      * @since JDK 1.6
      */
-    public static String getCallBackIP(String access_token) throws Exception {
+    public static String getCallBackIP(String access_token){
         String response = null;
         String url = GET_CALBACK_IP_URL + "?access_token=" + access_token;
         response = HttpUtil.get(url);
@@ -116,7 +116,7 @@ public class BaseAuthClient {
      * @author 徐国诚
      * @since JDK 1.6
      */
-    public static JSONObject getCallBackIPJSON(String access_token) throws Exception {
+    public static JSONObject getCallBackIPJSON(String access_token){
         JSONObject retObj = null;
         String response = getCallBackIP(access_token);
         if (!StringUtil.isNullOrEmpty(response)) {
