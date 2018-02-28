@@ -22,6 +22,8 @@
         <module>aviator-demo</module>
         <module>spring-session-demo</module>
         <module>spring-websocket-demo</module>
+        <module>wx-server-sdk</module>
+        <module>common-utils</module>
     </modules>
 
     <properties>
