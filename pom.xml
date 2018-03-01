@@ -12,6 +12,7 @@
     <modules>
         <module>netty-demo</module>
         <module>j2se-demo</module>
+        <module>java-data-structure</module>
         <module>spring4</module>
         <module>spring5</module>
         <module>rx-java-1x</module>
@@ -24,6 +25,7 @@
         <module>spring-websocket-demo</module>
         <module>wx-server-sdk</module>
         <module>common-utils</module>
+        <module>sharding-jdbc-demo</module>
     </modules>
 
     <properties>
